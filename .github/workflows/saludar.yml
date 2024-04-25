@@ -10,7 +10,9 @@ jobs:
       - name: Decir Hola
         run: echo "Hola Mundo de HaB"
       - name: Pausa
-        run: sleep 20
+        run: sleep 5
+      - name: Que hora es
+        run: echo "La hora del servidor es $(date)"
 
   despedir:
     runs-on: ubuntu-latest
