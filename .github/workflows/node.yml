@@ -9,6 +9,14 @@ jobs:
         steps:
             - name: Check-Out del código
               uses: actions/checkout@v4
+            
+            - run: node --version
+
+            - uses: actions/setup-node@v4
+              with:
+                node-version: 20
+
+            - run: node --version
 
             - name: Revisar url
               run: echo "Ruta del directorio es $GITHUB_WORKSPACE"
