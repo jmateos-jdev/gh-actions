@@ -1,0 +1,11 @@
+name: Levantar Node
+
+on: push
+
+jobs:
+    checkOut:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Check-Out del código
+              uses: actions/checkout@v2
