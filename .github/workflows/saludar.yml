@@ -1,8 +1,6 @@
 name: Decir Hola Mundo
 
-on:
-  push:
-    branches: [dev]
+on: [push]
 
 jobs:
 
