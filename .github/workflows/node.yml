@@ -4,8 +4,14 @@ on: push
 
 jobs:
     checkOut:
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-20.04
 
         steps:
             - name: Check-Out del código
-              uses: actions/checkout@v2
+              uses: actions/checkout@v4
+
+            - name: Revisar url
+              run: echo "Ruta del directorio es $GITHUB_WORKSPACE"
+              
+            - name: Listar archivos
+              run: ls -la $GITHUB_WORKSPACE
