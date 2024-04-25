@@ -1,1 +1,4 @@
 name: Decir Hola Mundo
+
+on: [push]
+
