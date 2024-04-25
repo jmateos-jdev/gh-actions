@@ -16,5 +16,8 @@ jobs:
             - name: Listar archivos
               run: ls -la $GITHUB_WORKSPACE
 
+            - name: Instalar dependencias
+              run: npm i
+
             - name: Ejecutar backend
               run: npm run dev
