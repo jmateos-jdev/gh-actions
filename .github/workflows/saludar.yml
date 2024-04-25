@@ -3,11 +3,15 @@ name: Decir Hola Mundo
 on: [push]
 
 jobs:
+
   saludar:
     runs-on: ubuntu-latest
     steps:
       - name: Decir Hola
         run: echo "Hola Mundo de HaB"
+      - name: Pausa
+        run: sleep 20
+
   despedir:
     runs-on: ubuntu-latest
     steps:
