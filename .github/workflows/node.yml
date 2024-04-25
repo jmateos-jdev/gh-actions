@@ -12,6 +12,9 @@ jobs:
 
             - name: Revisar url
               run: echo "Ruta del directorio es $GITHUB_WORKSPACE"
-              
+
             - name: Listar archivos
               run: ls -la $GITHUB_WORKSPACE
+
+            - name: Ejecutar backend
+              run: npm run dev
