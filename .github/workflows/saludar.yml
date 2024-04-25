@@ -2,7 +2,7 @@ name: Decir Hola Mundo
 
 on:
   push:
-    branches: [main,dev]
+    branches: [dev]
 
 jobs:
 
@@ -12,7 +12,7 @@ jobs:
       - name: Decir Hola
         run: echo "Hola Mundo de HaB"
       - name: Pausa
-        run: sleep 5
+        run: sleep 2
       - name: Que hora es
         run: echo "La hora del servidor es $(date)"
 
