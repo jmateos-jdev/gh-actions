@@ -8,6 +8,9 @@ jobs:
     steps:
       - name: Decir Hola
         run: echo "Hola Mundo de HaB"
+  despedir:
+    runs-on: ubuntu-latest
+    steps:
       - name: Decir Chau
         run: echo "Chau Mundo de HaB"
-      - run: echo "mensaje sin nombre"
+
