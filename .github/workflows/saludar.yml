@@ -1,22 +1,30 @@
 name: Decir Hola Mundo
 
+env:
+  U_VERSION: ubuntu-latest
+
 on: [push]
 
 jobs:
 
   saludar:
-    runs-on: ubuntu-latest
+    runs-on: $U_VERSION
     steps:
       - name: Decir Hola
         run: echo "Hola Mundo de HaB"
       - name: Pausa
         run: sleep 5
+
+  darHora:
+    runs-on: $U_VERSION
+    needs: saludar
+    steps:        
       - name: Que hora es
         run: echo "La hora del servidor es $(date)"
 
   despedir:
-    runs-on: macos-latest
-    needs: saludar
+    runs-on: $U_VERSION
+    needs: darHora
     steps:
       - name: Decir Chau
         run: echo "Chau Mundo de HaB"
