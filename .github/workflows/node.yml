@@ -29,7 +29,7 @@ jobs:
               
             - name: Correr ante error
               if: ${{ failure() }}
-              uses: devellany/send-mailer@v1.0.0
+              uses: devellany/send-mailer@v1.0.2
               with:
                 host: smtp.google.com
                 account: ${{ secrets.ACCOUNT }}
