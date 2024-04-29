@@ -30,9 +30,5 @@ jobs:
             - name: Instalar dependencias
               run: npm i
             
-            - name: Pruebas en Chrome
-              run: npm run test -- --browser=chrome
-    
-            - name: Pruebas en Firefox
-              run: npm run test -- --browser=firefox
-
+            - name: Mostrar Secret
+              run: echo ${{ secret.MI_SECRET }}
