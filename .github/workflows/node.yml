@@ -1,6 +1,6 @@
 name: Levantar Node
 
-on: push
+on: [push]
 
 jobs:
     checkOut:
@@ -26,5 +26,3 @@ jobs:
             - name: Instalar dependencias
               run: npm i
 
-            - name: Ejecutar backend
-              # run: npm run dev
