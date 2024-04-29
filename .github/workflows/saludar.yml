@@ -21,7 +21,7 @@ jobs:
 
   despedir:
     runs-on: ubuntu-latest
-    needs: darHora
+    needs: saludar
     steps:
       - name: Decir Chau
         run: echo "Chau Mundo de HaB"
