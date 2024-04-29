@@ -1,8 +1,5 @@
 name: Levantar Node
 
-env:
-    MI_VARIABLE: "valor a mostrar"
-
 on: [push]
 
 jobs:
@@ -34,4 +31,4 @@ jobs:
               run: npm i
             
             - name: Mostrar Secret
-              run: echo $MI_VARIABLE
+              run: echo ${{ vars.MI_VARIABLE }}
