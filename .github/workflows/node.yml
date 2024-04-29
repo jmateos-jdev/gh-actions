@@ -25,13 +25,8 @@ jobs:
               run: echo "Ruta del directorio es $GITHUB_WORKSPACE"
 
             - name: Listar archivos
-              run: |
-                  try {
-                      ls -la $GITHUB_WORKSPACE
-                  } catch (error) {
-                      echo error
-                      exit 0
-                  }
+              run: ls -la $GITHUB_WORKSPACE
+              continue-on-error: true
 
             - name: Instalar dependencias
               run: npm i
