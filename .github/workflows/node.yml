@@ -25,12 +25,21 @@ jobs:
               run: echo "Ruta del directorio es $GITHUB_WORKSPACE"
 
             - name: Listar archivos
-              run: ls -la $GITHUB_WORKSPACE   
-              continue-on-error: true
+              run: ls -la $GITHUB_WORKSPACE 
               
             - name: Correr ante error
               if: ${{ failure() }}
-              run: echo "Error"
+              uses: devellany/send-mailer@v1.0.0
+              with:
+                host: smtp.google.com
+                account: ${{ secrets.ACCOUNT }}
+                password: ${{secrets.MAIL_PASSWORD}}
+                sender: devellany
+                from: ${{secrets.MAIL_ADDRESS}}
+                to: joaquin.mateos@jdev.com.ar
+                subject: Prueba Titulo
+                body: ${{vars.MAIL_BODY}}
+                contentType: text/html
 
             - name: Instalar dependencias
               run: npm i
