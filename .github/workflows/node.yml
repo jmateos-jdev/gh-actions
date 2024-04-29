@@ -4,7 +4,10 @@ on: [push]
 
 jobs:
     checkOut:
-        runs-on: ubuntu-22.04
+        runs-on: ${{ matrix.os }}
+        strategy:
+          matrix:
+            os: [ubuntu-22.04, ubuntu-20.04]
 
         steps:
             - name: Check-Out del código
