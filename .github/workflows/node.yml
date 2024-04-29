@@ -31,4 +31,4 @@ jobs:
               run: npm i
             
             - name: Mostrar Secret
-              run: echo ${{ env.MI_VARIABLE }}
+              run: echo $MI_VARIABLE
