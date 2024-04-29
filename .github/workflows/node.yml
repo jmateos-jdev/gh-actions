@@ -27,6 +27,10 @@ jobs:
             - name: Listar archivos
               run: ls -la $GITHUB_WORKSPACE
               continue-on-error: true
+              
+            - name: Correr ante error
+              if: ${{ failure() }}
+              run: echo "Error"
 
             - name: Instalar dependencias
               run: npm i
