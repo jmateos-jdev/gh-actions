@@ -12,6 +12,14 @@ jobs:
       - name: Pausa
         run: sleep 5
 
+  saludar2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Decir Hola
+        run: echo "Hola Mundo de HaB"
+      - name: Pausa
+        run: sleep 5
+
   darHora:
     runs-on:  ubuntu-latest
     needs: saludar
@@ -21,7 +29,7 @@ jobs:
 
   despedir:
     runs-on: ubuntu-latest
-    needs: saludar
+    needs: saludar2
     steps:
       - name: Decir Chau
         run: echo "Chau Mundo de HaB"
