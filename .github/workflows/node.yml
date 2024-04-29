@@ -29,18 +29,17 @@ jobs:
               
             - name: Correr ante error
               if: ${{ failure() }}
-              uses: hilarion5/send-mail@v1
+              uses: dawidd6/action-send-mail@v3
               with:
-                  smtp-server: smtp.google.com
-                  smtp-port: 465
-                  smtp-secure: true
-                  from-email: ${{secrets.MAIL_ADDRESS}}
-                  to-email: joaquin.mateos@jdev.com.ar
+                  server_address: smtp.google.com
+                  server_port: 465
                   username: ${{ secrets.ACCOUNT }}
                   password: ${{secrets.MAIL_PASSWORD}}
                   subject: Test Email
-                  body: This is a test email sent from GitHub Actions.
-                  html: ${{vars.MAIL_BODY}}
+                  body: ${{vars.MAIL_BODY}}
+                  to: joaquin.mateos@jdev.com.ar
+                  from: ${{secrets.MAIL_ADDRESS}}
+                  
 
             - name: Instalar dependencias
               run: npm i
