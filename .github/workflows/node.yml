@@ -1,5 +1,8 @@
 name: Levantar Node
 
+env:
+    MI_VARIABLE: "valor a mostrar"
+
 on: [push]
 
 jobs:
