@@ -4,10 +4,7 @@ on: push
 
 jobs:
     checkOut:
-        runs-on: ${{ matrix.os }}
-        strategy:
-            matrix:
-                os: [ubuntu-latest, windows-latest, macos-latest]
+        runs-on: ubuntu-22.04
 
         steps:
             - name: Check-Out del código
@@ -28,3 +25,6 @@ jobs:
 
             - name: Instalar dependencias
               run: npm i
+
+            - name: Ejecutar backend
+              # run: npm run dev
