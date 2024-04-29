@@ -9,6 +9,7 @@ jobs:
           matrix:
             os: [ubuntu-22.04, ubuntu-20.04, windows-latest, macos-latest]
             node_version: [16.x, 18.x, 20.x]
+            browser: [chrome, firefox]
 
         steps:
             - name: Check-Out del código
@@ -29,4 +30,7 @@ jobs:
 
             - name: Instalar dependencias
               run: npm i
+            
+            - name: Pruebas
+              run: npm run test -- --browser=${{matrix.browser}}
 
