@@ -8,7 +8,7 @@ on: [push]
 jobs:
 
   saludar:
-    runs-on: $U_VERSION
+    runs-on: ${{ env.U_VERSION }}
     steps:
       - name: Decir Hola
         run: echo "Hola Mundo de HaB"
@@ -16,14 +16,14 @@ jobs:
         run: sleep 5
 
   darHora:
-    runs-on: $U_VERSION
+    runs-on:  ${{ env.U_VERSION }}
     needs: saludar
     steps:        
       - name: Que hora es
         run: echo "La hora del servidor es $(date)"
 
   despedir:
-    runs-on: $U_VERSION
+    runs-on:  ${{ env.U_VERSION }}
     needs: darHora
     steps:
       - name: Decir Chau
