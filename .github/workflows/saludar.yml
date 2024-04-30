@@ -3,7 +3,6 @@ name: Decir Hola Mundo
 on: [push]
 
 jobs:
-
   saludar:
     runs-on: ubuntu-latest
     steps:
@@ -19,4 +18,3 @@ jobs:
     steps:
       - name: Decir Chau
         run: echo "Chau Mundo de HaB"
-

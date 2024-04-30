@@ -3,36 +3,32 @@ name: Levantar Node
 on: [push]
 
 jobs:
-    checkOut:
-        runs-on: ${{ matrix.os }}
-        strategy:
-          matrix:
-            os: [ubuntu-22.04, ubuntu-20.04, macos-latest]
-            node_version: [16.x, 18.x, 20.x]
+  checkOut:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        node_version: [18.x, 20.x]
 
-        steps:
-            - name: Check-Out del código
-              uses: actions/checkout@v4
-            - run: node --version
+    steps:
+      - name: Check-Out del código
+        uses: actions/checkout@v4
+      - run: node --version
 
-            - uses: actions/setup-node@v4
-              with:
-                node-version: ${{ matrix.node_version }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node_version }}
 
-            - run: node --version
+      - run: node --version
 
-            - name: Revisar url
-              run: echo "Ruta del directorio es $GITHUB_WORKSPACE"
+      - name: Revisar url
+        run: echo "Ruta del directorio es $GITHUB_WORKSPACE"
 
-            - name: Listar archivos
-              run: ls -la $GITHUB_WORKSPACE
+      - name: Listar archivos
+        run: ls -la $GITHUB_WORKSPACE
 
-            - name: Instalar dependencias
-              run: npm i
-            
-            - name: Pruebas en Chrome
-              run: npm run test -- --browser=chrome
+      - name: Instalar dependencias
+        run: npm i
 
-            - name: Pruebas en Firefox
-              run: npm run test -- --browser=firefox
-
+      - name: Pruebas en Prettier
+        run: npx prettier . --check
