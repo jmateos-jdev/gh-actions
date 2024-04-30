@@ -1,0 +1,21 @@
+name: Levantar Node
+
+on: [pull_request]
+
+jobs:
+  checkOut:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check-Out del código
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependencias
+        run: npm i
+
+      - name: Pruebas en Prettier
+        run: npx prettier . --check
