@@ -18,9 +18,9 @@ jobs:
         run: sleep 10
 
   darHora:
-    runs-on:  ubuntu-latest
+    runs-on: ubuntu-latest
     needs: [saludar, saludar2]
-    steps:        
+    steps:
       - name: Que hora es
         run: echo "La hora del servidor es $(date)"
 
