@@ -8,13 +8,32 @@ jobs:
     steps:
       - name: Decir Hola
         run: echo "Hola Mundo de HaB"
+
+  saludar2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Decir Hola
+        run: echo "Hola Mundo de HaB"
       - name: Pausa
-        run: sleep 2
+        run: sleep 10
+
+  darHora:
+    runs-on:  ubuntu-latest
+    needs: [saludar, saludar2]
+    steps:        
       - name: Que hora es
         run: echo "La hora del servidor es $(date)"
 
   despedir:
     runs-on: ubuntu-latest
+    needs: saludar2
+    steps:
+      - name: Decir Chau
+        run: echo "Chau Mundo de HaB"
+
+  despedir2:
+    runs-on: ubuntu-latest
+    needs: [despedir, darHora]
     steps:
       - name: Decir Chau
         run: echo "Chau Mundo de HaB"
